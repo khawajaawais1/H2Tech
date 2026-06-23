@@ -51,4 +51,15 @@ export const searchIndex = [
     ],
     path: "/services#seo",
   },
+  {
+    keywords: [
+      "campaign",
+      "campaigns",
+      "pricing",
+      "price",
+      "quote",
+      "tiers",
+    ],
+    path: "/campaigns#campaigns",
+  },
 ];

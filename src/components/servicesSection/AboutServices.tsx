@@ -141,7 +141,7 @@ const AboutServices = () => {
 
           <h1
             data-animate
-            className="mb-5 text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
+            className="mb-5 text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-red-600 to-gray-500 bg-clip-text text-transparent"
           >
             {t("heading")}
           </h1>

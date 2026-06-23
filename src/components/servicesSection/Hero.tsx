@@ -17,7 +17,7 @@ const ServicesHero = () => {
       >
         <h1
           className="
-           bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent font-semibold tracking-tight leading-tight drop-shadow-lg
+           bg-gradient-to-r from-red-600 to-gray-500 bg-clip-text text-transparent font-semibold tracking-tight leading-tight drop-shadow-lg
           text-xl
           sm:text-4xl
           md:text-5xl

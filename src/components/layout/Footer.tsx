@@ -66,6 +66,11 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href={`/${locale}/campaigns`} className="text-sm text-white/70 hover:text-white transition-colors">
+                    {t("linkCampaigns")}
+                  </Link>
+                </li>
+                <li>
                   <Link href={`/${locale}/#about`} className="text-sm text-white/70 hover:text-white transition-colors">
                     {t("linkAbout")}
                   </Link>
@@ -89,7 +94,7 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3.5">
                 <li>
-                  <Link href="https://www.linkedin.com/in/happy-2tech-b471413b6/" target="_blank" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="https://www.linkedin.com/company/happy2tech/" target="_blank" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                     <IconLinkedIn /> LinkedIn
                   </Link>
                 </li>
@@ -103,11 +108,11 @@ const Footer = () => {
                     <IconYoutube /> YouTube
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="https://www.facebook.com/" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                     <IconFacebook /> Facebook
                   </Link>
-                </li>
+                </li> */}
 
               </ul>
             </div>

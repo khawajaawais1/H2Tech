@@ -10,6 +10,7 @@ import { useLocale, useTranslations } from "next-intl";
 const NAV_LINKS = [
   { key:"home", href: "/", type: "route" },
   { key:"services", href: "/services", type: "route" },
+  { key:"campaigns", href: "/campaigns", type: "route" },
   { key:"vision", href: "/vision", type: "route" },
   { key:"contact", href: "/contact", type: "route" },
 ];

@@ -13,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${base}/campaigns`,
+      lastModified: new Date(),
+    },
+    {
       url: `${base}/contact`,
       lastModified: new Date(),
     },
