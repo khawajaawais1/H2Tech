@@ -88,7 +88,7 @@ const WhatWeBuild = () => {
     <section className="w-full bg-[#f3f3f3]">
       <div className="mx-auto w-full px-5 py-14 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
         <div className="mx-auto flex max-w-[920px] flex-col items-center justify-center pb-10 text-center sm:pb-12 md:pb-14">
-          <h2 className="mb-5 text-4xl font-extrabold leading-tight bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-[4rem]">
+          <h2 className="mb-5 text-4xl font-extrabold leading-tight bg-gradient-to-r from-red-600 to-gray-500 bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-[4rem]">
             {t("heading")}
           </h2>
           <p className="max-w-full text-sm leading-relaxed text-black/85 sm:text-base md:max-w-[70%] lg:max-w-[58%]">
