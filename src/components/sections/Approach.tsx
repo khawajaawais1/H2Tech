@@ -6,13 +6,6 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import type { MouseEvent } from "react";
 
-const FLOAT_TRANSITION = (duration: number, delay = 0) => ({
-  duration,
-  delay,
-  repeat: Infinity,
-  ease: "easeInOut" as const,
-});
-
 const Approach = () => {
   const t = useTranslations("approach");
   const locale = useLocale();
@@ -129,8 +122,6 @@ const Approach = () => {
                 <div className="relative h-[360px]">
                   <motion.div
                     className="absolute ml-5 w-[300px] h-[350px]"
-                    animate={{ x: [0, 6, 0, -6, 0], y: [0, -10, -16, -10, 0] }}
-                    transition={FLOAT_TRANSITION(8)}
                   >
                     <motion.div
                       className="relative w-full h-full overflow-hidden rounded-[20px] shadow-[0_26px_52px_rgba(0,0,0,0.35)] ring-1 ring-white/10"
@@ -144,8 +135,6 @@ const Approach = () => {
                   </motion.div>
                   <motion.div
                     className="absolute right-0 top-[36px] w-[165px] h-[130px]"
-                    animate={{ x: [0, -6, 0, 6, 0], y: [0, 8, 14, 8, 0] }}
-                    transition={FLOAT_TRANSITION(9, 0.4)}
                   >
                     <motion.div
                       className="relative w-full h-full overflow-hidden rounded-[20px] shadow-[0_26px_52px_rgba(0,0,0,0.35)] ring-1 ring-white/10"
@@ -159,8 +148,6 @@ const Approach = () => {
                   </motion.div>
                   <motion.div
                     className="absolute left-0 bottom-[34px] w-[240px] h-[135px]"
-                    animate={{ x: [0, 8, 0, -8, 0], y: [0, -6, -12, -6, 0] }}
-                    transition={FLOAT_TRANSITION(10, 0.8)}
                   >
                     <motion.div
                       className="relative w-full h-full overflow-hidden rounded-[20px] shadow-[0_26px_52px_rgba(0,0,0,0.35)] ring-1 ring-white/10"
@@ -189,8 +176,6 @@ const Approach = () => {
                 {/* Image 1 */}
                 <motion.div
                   className="absolute right-0 bottom-0 w-[430px] h-[560px]"
-                  animate={{ x: [0, 10, 0, -10, 0], y: [0, -8, -14, -8, 0] }}
-                  transition={FLOAT_TRANSITION(11)}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 50, rotate: -2 }}
@@ -209,8 +194,6 @@ const Approach = () => {
                 {/* Image 2 */}
                 <motion.div
                   className="absolute top-[298px] left-[-18px] w-[325px] h-[205px]"
-                  animate={{ x: [0, -8, 0, 8, 0], y: [0, 6, 12, 6, 0] }}
-                  transition={FLOAT_TRANSITION(9, 0.6)}
                 >
                   <motion.div
                     initial={{ opacity: 0, x: -50, rotate: -3 }}
@@ -229,8 +212,6 @@ const Approach = () => {
                 {/* Image 3 */}
                 <motion.div
                   className="absolute right-[-118px] top-[12px] w-[210px] h-[210px]"
-                  animate={{ x: [0, 8, 0, -8, 0], y: [0, -6, -12, -6, 0] }}
-                  transition={FLOAT_TRANSITION(10, 1.1)}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: -40, rotate: 4 }}

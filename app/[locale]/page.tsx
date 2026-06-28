@@ -1,8 +1,8 @@
 import Footer from "@/src/components/layout/Footer";
 import Navbar from "@/src/components/layout/Navbar";
 import About from "@/src/components/sections/About";
-import Approach from "@/src/components/sections/Approach";
 import AiShowcase from "@/src/components/sections/AiShowcase";
+import Approach from "@/src/components/sections/Approach";
 import FaqSection from "@/src/components/sections/Faqs";
 import FutureSection from "@/src/components/sections/Future";
 import Hero from "@/src/components/sections/Hero";
@@ -28,16 +28,24 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
-        <About />
+        <section id="about">
+          <About />
+        </section>
         <section id="ai">
           <AiShowcase />
         </section>
         <section id="vision">
           <Vision />
         </section>
-        <Approach />
-        <FutureSection />
-        <FaqSection />
+        <section id="approach">
+          <Approach />
+        </section>
+        <section id="future">
+          <FutureSection />
+        </section>
+        <section id="faqs">
+          <FaqSection />
+        </section>
       </main>
       <Footer />
     </>

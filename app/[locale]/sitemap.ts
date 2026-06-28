@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${base}/campaigns`,
+      url: `${base}/promotions`,
       lastModified: new Date(),
     },
     {

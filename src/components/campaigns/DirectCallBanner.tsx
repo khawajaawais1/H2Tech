@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 const PHONE_DISPLAY = "+358 40 707 8000";
 const WHATSAPP_HREF =
   "https://wa.me/358407078000?text=" +
-  encodeURIComponent("Hi! I have a quick question about your campaign packages.");
+  encodeURIComponent("Hi! I have a quick question about your promotion packages.");
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">

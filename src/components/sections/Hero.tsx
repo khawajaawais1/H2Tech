@@ -69,7 +69,7 @@
 
 
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 
 const Hero = () => {
@@ -78,36 +78,25 @@ const Hero = () => {
   const t = useTranslations("hero");
   const locale = useLocale();
 
-  const handleTimeUpdate = () => {
+  useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!video || !section) return;
 
-    const remaining = video.duration - video.currentTime;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void video.play();
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.15 }
+    );
 
-    // Fade out in the last 1.5 seconds
-    if (remaining <= 1.5) {
-      video.style.opacity = String(Math.max(0, remaining / 1.5));
-    } else {
-      video.style.opacity = "1";
-    }
-  };
-
-  const handleVideoEnd = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.style.opacity = "0";
-
-    // Small pause at black before restarting
-    setTimeout(() => {
-      video.currentTime = 0;
-      video.play();
-      // Fade back in
-      setTimeout(() => {
-        video.style.opacity = "0.4";
-      }, 100);
-    }, 300);
-  };
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden min-h-screen">
@@ -119,11 +108,10 @@ const Hero = () => {
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
         autoPlay
+        loop
         muted
         playsInline
-        preload="auto"
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleVideoEnd}
+        preload="metadata"
         // No loop — we handle it manually for smooth transition
       >
         <source src="/3.mov" type="video/mp4" />

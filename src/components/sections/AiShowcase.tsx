@@ -7,8 +7,7 @@ import type { MouseEvent } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Particles, ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { Engine } from "@tsparticles/engine";
-import type { ISourceOptions } from "@tsparticles/engine";
+import type { Engine, ISourceOptions } from "@tsparticles/engine";
 
 const initParticles = async (engine: Engine) => {
   await loadSlim(engine);
@@ -141,7 +140,7 @@ const AiShowcase = () => {
               transition={{ duration: 0.4, delay: 0.5 }}
             >
               <Link
-                href={`/${locale}/campaigns`}
+                href={`/${locale}/promotions`}
                 className="group relative mt-10 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#C11212] to-red-500 px-7 py-3.5 text-sm font-bold text-white shadow-[0_14px_34px_rgba(193,18,18,0.35)] transition-all duration-200 hover:shadow-[0_18px_42px_rgba(193,18,18,0.5)] active:scale-95"
               >
                 <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
@@ -180,12 +179,22 @@ const AiShowcase = () => {
               </div>
 
               <div className="mt-3 flex justify-start">
-                <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-white/10 px-4 py-3 text-[13.5px] leading-relaxed text-white/90">
+                <div className="relative max-w-[85%] rounded-2xl rounded-tl-sm bg-white/10 text-[13.5px] leading-relaxed text-white/90">
+                  {/* Invisible placeholder reserves the final two-line height/width so the
+                      typing animation never resizes the bubble (was causing layout shift on mobile) */}
+                  <span
+                    className="invisible block px-4 py-3"
+                    style={{ whiteSpace: "pre-line" }}
+                    aria-hidden="true"
+                  >
+                    {`${t("aiLine1")}\n\n${t("aiLine2")}`}
+                  </span>
                   <TypeAnimation
                     sequence={[t("aiLine1"), 900, `${t("aiLine1")}\n\n${t("aiLine2")}`, 4500]}
                     wrapper="span"
                     speed={70}
-                    style={{ whiteSpace: "pre-line", display: "inline-block" }}
+                    style={{ whiteSpace: "pre-line" }}
+                    className="absolute inset-0 px-4 py-3"
                     repeat={Infinity}
                     cursor
                   />

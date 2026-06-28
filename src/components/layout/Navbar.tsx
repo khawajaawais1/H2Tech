@@ -10,7 +10,7 @@ import { useLocale, useTranslations } from "next-intl";
 const NAV_LINKS = [
   { key:"home", href: "/", type: "route" },
   { key:"services", href: "/services", type: "route" },
-  { key:"campaigns", href: "/campaigns", type: "route" },
+  { key:"campaigns", href: "/promotions", type: "route" },
   { key:"vision", href: "/vision", type: "route" },
   { key:"contact", href: "/contact", type: "route" },
 ];
@@ -98,19 +98,21 @@ const Navbar = () => {
   }
 
   const [targetPath, hash] = match.path.split("#");
+  const localizedTargetPath = `/${locale}${targetPath === "/" ? "" : targetPath}`;
+  const localizedTarget = hash ? `${localizedTargetPath}#${hash}` : localizedTargetPath;
 
   setSearchOpen(false);
   setSearchValue("");
 
   const currentPath = pathname || "/";
 
-  if (currentPath === targetPath) {
+  if (currentPath === localizedTargetPath) {
     const el = document.getElementById(hash);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   } else {
-    router.push(match.path);
+    router.push(localizedTarget);
   }
 };
 
@@ -355,7 +357,7 @@ const changeLanguage = (newLocale: string) => {
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={`/${locale}${l.href}`}
               onClick={closeAll}
               className="block rounded-lg px-4 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
             >

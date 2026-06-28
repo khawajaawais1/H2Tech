@@ -60,11 +60,9 @@ const FutureSection = () => {
               className="absolute -inset-5 -z-10 rounded-[44px] bg-gradient-to-br from-red-600/12 via-transparent to-gray-400/14 blur-2xl"
               aria-hidden="true"
             />
-            <motion.div
+            <div
               className="relative w-full overflow-hidden rounded-[32px] bg-white shadow-[0_30px_70px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
               style={{ aspectRatio: "16 / 7" }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
                 src="/Future.svg"
@@ -73,7 +71,7 @@ const FutureSection = () => {
                 className="object-cover"
                 sizes="(max-width: 768px) 92vw, (max-width: 1200px) 86vw, 1200px"
               />
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
