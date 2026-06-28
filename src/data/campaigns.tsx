@@ -32,10 +32,10 @@ export const categories: ServiceCategory[] = [
       </svg>
     ),
     tiers: [
-      { id: "tier1", priceFrom: "€99" },
-      { id: "tier2", featured: true, priceFrom: "€200" },
-      { id: "tier3", priceFrom: "€500" },
-      { id: "tier4", priceFrom: "€700" },
+      { id: "tier1", priceFrom: "€98" },
+      { id: "tier2", featured: true, priceFrom: "€199" },
+      { id: "tier3", priceFrom: "€499" },
+      { id: "tier4", priceFrom: "€699" },
     ],
   },
   {
@@ -62,7 +62,7 @@ export const categories: ServiceCategory[] = [
       </svg>
     ),
     tiers: [
-      { id: "tier1", priceFrom: "€800" },
+      { id: "tier1", priceFrom: "€799" },
       { id: "tier2", featured: true, quote: { variant: "tailored" } },
       { id: "tier3", quote: { variant: "tailored" } },
       { id: "tier4", quote: { variant: "enterprise" } },
@@ -78,7 +78,7 @@ export const categories: ServiceCategory[] = [
     ),
     tiers: [
       { id: "tier1", priceFrom: "€299" },
-      { id: "tier2", featured: true, priceFrom: "€700" },
+      { id: "tier2", featured: true, priceFrom: "€699" },
       { id: "tier3", quote: { variant: "tailored" } },
       { id: "tier4", quote: { variant: "enterprise" } },
     ],
