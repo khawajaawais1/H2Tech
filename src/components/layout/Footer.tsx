@@ -66,7 +66,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/campaigns`} className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href={`/${locale}/promotions`} className="text-sm text-white/70 hover:text-white transition-colors">
                     {t("linkCampaigns")}
                   </Link>
                 </li>

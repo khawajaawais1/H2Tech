@@ -5,7 +5,12 @@ import { useTranslations, useLocale } from "next-intl";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const ContactSection = () => {
+type ContactSectionProps = {
+  initialMessage?: string;
+  initialTopic?: string;
+};
+
+const ContactSection = ({ initialMessage = "", initialTopic = "" }: ContactSectionProps) => {
   const t = useTranslations("contact");
   const sectionRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
@@ -54,11 +59,12 @@ const ContactSection = () => {
       lastName: "",
       email: "",
       phone: "",
-      topic: "",
+      topic: initialTopic,
       role: "",
-      message: "",
+      message: initialMessage,
       agreed: false,
     },
+    enableReinitialize: true,
     validationSchema,
     onSubmit: async (values, { setStatus, resetForm }) => {
       try {

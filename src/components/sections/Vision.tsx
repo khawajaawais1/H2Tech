@@ -63,11 +63,7 @@ const Vision = () => {
                 className="absolute -inset-6 -z-10 rounded-[40px] bg-gradient-to-br from-[#C11212]/15 via-transparent to-[#1A2670]/20 blur-2xl"
                 aria-hidden="true"
               />
-              <motion.div
-                className="relative aspect-square w-full overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(5,10,48,0.18)] ring-1 ring-black/5"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="relative aspect-square w-full overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(5,10,48,0.18)] ring-1 ring-black/5">
                 <Image
                   src="/5.png"
                   alt={t("imageAlt")}
@@ -76,7 +72,7 @@ const Vision = () => {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 

@@ -6,12 +6,16 @@ import PricingCard from "./PricingCard";
 
 const PricingExplorer = () => {
   const t = useTranslations("campaigns");
-  const [active, setActive] = useState<ServiceCategory["id"]>(categories[0].id);
+  const orderedCategories = [
+    categories.find((category) => category.id === "chatbots"),
+    ...categories.filter((category) => category.id !== "chatbots"),
+  ].filter(Boolean) as ServiceCategory[];
+  const [active, setActive] = useState<ServiceCategory["id"]>(orderedCategories[0].id);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [indicator, setIndicator] = useState({ left: 0, width: 0 });
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const activeCategory = categories.find((c) => c.id === active) ?? categories[0];
+  const activeCategory = orderedCategories.find((c) => c.id === active) ?? orderedCategories[0];
 
   useLayoutEffect(() => {
     const measure = () => {
@@ -29,7 +33,7 @@ const PricingExplorer = () => {
   };
 
   return (
-    <section id="campaigns" ref={sectionRef} className="relative bg-[#F7F8FB] py-16 sm:py-20">
+    <section id="promotions" ref={sectionRef} className="relative overflow-x-hidden bg-[#F7F8FB] py-16 sm:py-20">
       <style>{`
         @keyframes campaignCardIn { from { opacity:0; transform: translateY(26px) scale(.97); } to { opacity:1; transform:none; } }
         .campaign-card-in { animation: campaignCardIn .55s cubic-bezier(.16,1,.3,1) both; }
@@ -45,13 +49,15 @@ const PricingExplorer = () => {
         {/* Tabs */}
         <div className="relative">
           <div className="pointer-events-none absolute -inset-x-4 -inset-y-4 -z-10 rounded-[40px] bg-gradient-to-r from-[#C11212]/8 via-transparent to-[#050A30]/8 blur-2xl" />
-          <div className="no-scrollbar relative flex gap-2 overflow-x-auto rounded-[26px] border border-black/5 bg-white/90 p-2.5 shadow-[0_18px_45px_rgba(5,10,48,0.08)] backdrop-blur-xl">
+          <div className="pointer-events-none absolute bottom-2 right-0 top-2 z-10 w-16 rounded-r-[26px] bg-gradient-to-l from-white via-white/70 to-transparent sm:hidden" />
+          <div className="pointer-events-none absolute bottom-2 left-0 top-2 z-10 w-5 rounded-l-[26px] bg-gradient-to-r from-white/80 to-transparent sm:hidden" />
+          <div className="no-scrollbar relative flex snap-x snap-mandatory gap-1.5 overflow-x-auto rounded-[24px] border border-black/5 bg-white/90 p-1.5 pr-8 shadow-[0_14px_35px_rgba(5,10,48,0.08)] backdrop-blur-xl sm:gap-2 sm:rounded-[26px] sm:p-2.5 sm:pr-2.5 sm:shadow-[0_18px_45px_rgba(5,10,48,0.08)]">
             <span
-              className="absolute top-2.5 bottom-2.5 rounded-2xl bg-gradient-to-br from-[#050A30] via-[#0B1454] to-[#1A2670] shadow-[0_10px_28px_rgba(5,10,48,0.35)] transition-all duration-300 ease-out"
+              className="absolute top-2.5 bottom-2.5 hidden rounded-2xl bg-gradient-to-br from-[#050A30] via-[#0B1454] to-[#1A2670] shadow-[0_10px_28px_rgba(5,10,48,0.35)] transition-all duration-300 ease-out sm:block"
               style={{ left: indicator.left, width: indicator.width }}
               aria-hidden="true"
             />
-            {categories.map((cat) => {
+            {orderedCategories.map((cat) => {
               const isActive = cat.id === active;
               return (
                 <button
@@ -62,21 +68,23 @@ const PricingExplorer = () => {
                   type="button"
                   onClick={() => handleSelect(cat.id)}
                   className={[
-                    "relative z-10 flex min-w-[140px] flex-1 flex-col items-center gap-1.5 whitespace-nowrap rounded-2xl px-3 py-3.5 transition-colors duration-300 sm:min-w-[170px] sm:flex-row sm:justify-center sm:gap-3 sm:px-4",
-                    isActive ? "text-white" : "text-black/55 hover:text-[#0D1235]",
+                    "relative z-10 flex min-w-[96px] snap-start flex-col items-center gap-0.5 whitespace-nowrap rounded-[14px] px-2 py-2.5 transition-all duration-300 sm:min-w-[170px] sm:flex-1 sm:flex-row sm:justify-center sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3.5",
+                    isActive
+                      ? "bg-[#050A30] text-white shadow-[0_10px_24px_rgba(5,10,48,0.28)] sm:bg-transparent sm:shadow-none"
+                      : "text-black/55 hover:text-[#0D1235]",
                   ].join(" ")}
                 >
                   <span
                     className={[
-                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300",
+                      "flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 sm:h-9 sm:w-9",
                       isActive ? "scale-110 bg-white/15 text-white" : "bg-[#FDECEC] text-[#C11212]",
                     ].join(" ")}
                   >
                     {cat.icon}
                   </span>
                   <span className="flex flex-col items-center sm:items-start">
-                    <span className="text-[13.5px] font-bold leading-tight">{t(`tab_${cat.id}`)}</span>
-                    <span className={isActive ? "text-[10.5px] font-medium text-white/55" : "text-[10.5px] font-medium text-black/40"}>
+                    <span className="text-[11.5px] font-bold leading-tight sm:text-[13.5px]">{t(`tab_${cat.id}`)}</span>
+                    <span className={isActive ? "text-[9.5px] font-medium text-white/55 sm:text-[10.5px]" : "text-[9.5px] font-medium text-black/40 sm:text-[10.5px]"}>
                       {t("tab_badge")}
                     </span>
                   </span>
@@ -103,9 +111,11 @@ const PricingExplorer = () => {
             </span>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid auto-rows-fr grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {activeCategory.tiers.map((tier, i) => (
-              <PricingCard key={tier.id} categoryId={active} tier={tier} delay={i * 90} />
+              <div key={tier.id} className="min-w-0 h-full">
+                <PricingCard categoryId={active} tier={tier} delay={i * 90} />
+              </div>
             ))}
           </div>
         </div>

@@ -8,15 +8,15 @@ import TrustStrip from "@/src/components/campaigns/TrustStrip";
 import CampaignFinalCta from "@/src/components/campaigns/FinalCta";
 
 export const metadata: Metadata = {
-  title: "Campaigns & Pricing | Happy2Tech (H2Tech)",
+  title: "Promotions & Pricing | Happy2Tech (H2Tech)",
   description:
-    "Launch-ready campaign pricing for websites, mobile apps, web apps, and AI chatbots. Transparent starting prices, tailored quotes in 24 hours, built for the Finnish market.",
+    "Launch-ready promotion pricing for websites, mobile apps, web apps, and AI chatbots. Transparent starting prices, tailored quotes in 24 hours, built for the Finnish market.",
   alternates: {
-    canonical: "/campaigns",
+    canonical: "/promotions",
   },
 };
 
-export default function CampaignsPage() {
+export default function PromotionsPage() {
   return (
     <>
       <script
@@ -25,8 +25,8 @@ export default function CampaignsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "OfferCatalog",
-            name: "Happy2Tech Campaign Pricing",
-            url: "https://happy2tech.fi/campaigns",
+            name: "Happy2Tech Promotion Pricing",
+            url: "https://happy2tech.fi/promotions",
             provider: {
               "@type": "Organization",
               name: "Happy2Tech",

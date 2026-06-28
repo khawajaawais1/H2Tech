@@ -72,11 +72,7 @@ const About = () => {
             >
               <div className="group relative flex h-full flex-col rounded-[26px] border border-black/5 bg-white shadow-[0_10px_30px_rgba(5,10,48,0.06)] transition-all duration-300 hover:-translate-y-2 hover:border-[#C11212]/25 hover:shadow-[0_28px_60px_rgba(5,10,48,0.14)]">
                 <div className="relative w-full overflow-hidden rounded-t-[26px]" style={{ aspectRatio: "16/10" }}>
-                  <motion.div
-                    className="absolute inset-0"
-                    animate={{ scale: [1, 1.12, 1] }}
-                    transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: index * 1.6 }}
-                  >
+                  <div className="absolute inset-0">
                     <Image
                       src={card.img}
                       alt={t(card.titleKey)}
@@ -84,7 +80,7 @@ const About = () => {
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                  </motion.div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
                 </div>
 
