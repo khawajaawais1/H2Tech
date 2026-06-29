@@ -32,7 +32,7 @@ export const categories: ServiceCategory[] = [
       </svg>
     ),
     tiers: [
-      { id: "tier1", priceFrom: "€98" },
+      { id: "tier1", priceFrom: "€99" },
       { id: "tier2", featured: true, priceFrom: "€199" },
       { id: "tier3", priceFrom: "€499" },
       { id: "tier4", priceFrom: "€699" },
