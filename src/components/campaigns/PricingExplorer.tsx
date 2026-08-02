@@ -6,10 +6,7 @@ import PricingCard from "./PricingCard";
 
 const PricingExplorer = () => {
   const t = useTranslations("campaigns");
-  const orderedCategories = [
-    categories.find((category) => category.id === "chatbots"),
-    ...categories.filter((category) => category.id !== "chatbots"),
-  ].filter(Boolean) as ServiceCategory[];
+  const orderedCategories = categories;
   const [active, setActive] = useState<ServiceCategory["id"]>(orderedCategories[0].id);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [indicator, setIndicator] = useState({ left: 0, width: 0 });
@@ -111,7 +108,12 @@ const PricingExplorer = () => {
             </span>
           </div>
 
-          <div className="mt-8 grid auto-rows-fr grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className={[
+              "grid auto-rows-fr grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4",
+              active === "websites" ? "mt-28 sm:mt-24" : "mt-8",
+            ].join(" ")}
+          >
             {activeCategory.tiers.map((tier, i) => (
               <div key={tier.id} className="min-w-0 h-full">
                 <PricingCard categoryId={active} tier={tier} delay={i * 90} />
