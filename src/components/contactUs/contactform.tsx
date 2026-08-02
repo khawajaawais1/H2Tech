@@ -342,6 +342,7 @@ const ContactSection = ({ initialMessage = "", initialTopic = "" }: ContactSecti
                 <option value="Project Request">{t("topicProject")}</option>
                 <option value="Partnership">{t("topicPartnership")}</option>
                 <option value="Support">{t("topicSupport")}</option>
+                <option value="Careers">{t("topicCareers")}</option>
               </select>
               <label className="float-label">{t("topicLabel")}</label>
               {/* Chevron icon */}

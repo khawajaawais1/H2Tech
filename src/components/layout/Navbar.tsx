@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { key:"services", href: "/services", type: "route" },
   { key:"campaigns", href: "/promotions", type: "route" },
   { key:"vision", href: "/vision", type: "route" },
+  { key:"careers", href: "/careers", type: "route" },
   { key:"contact", href: "/contact", type: "route" },
 ];
 

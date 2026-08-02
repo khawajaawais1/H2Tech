@@ -4,7 +4,8 @@
     "services": "Palvelut",
     "contact": "Ota yhteyttä",
     "vision": "Visio",
-    "campaigns": "Promootiot"
+    "campaigns": "Promootiot",
+    "careers": "Ura"
   },
   "hero": {
     "title": "Autamme yrityksiä kasvamaan \nälykkään teknologian avulla",
@@ -83,7 +84,8 @@
     "footerTerms": "Käyttöehdot",
     "footerCookies": "Evästeasetukset",
     "footerGdpr": "GDPR-tietosuojailmoitus",
-    "linkCampaigns": "Promootiot"
+    "linkCampaigns": "Promootiot",
+    "linkCareers": "Ura"
   },
   "services": {
     "heading": "PALVELUMME",
@@ -168,6 +170,7 @@
     "topicProject": "Projektipyyntö",
     "topicPartnership": "Kumppanuus",
     "topicSupport": "Tuki",
+    "topicCareers": "Ura",
     "roleLabel": "Mikä kuvaa rooliasi",
     "roleDesigner": "Suunnittelija",
     "roleDeveloper": "Kehittäjä",
@@ -262,6 +265,7 @@
     "common_mostPopular": "Suosituin",
     "common_customQuote": "Räätälöity tarjous",
     "common_bestFit": "Sopii parhaiten",
+    "common_viewSamples": "Katso {count} mallia",
     "websites_heading": "Verkkosivustot",
     "websites_description": "Yhden sivun esittelystä sisältörikkaaseen verkkokauppaan. Jokainen taso on mobiilioptimoitu, Google-valmis ja räätälöity Suomen markkinoille.",
     "websites_pillNote": "Päivitetty kesäkuussa 2026",
@@ -516,5 +520,64 @@
     "headingPre": "Rakenna ensimmäinen ",
     "headingHighlight": "AI-agenttisi",
     "headingPost": " kanssamme — käytössä päivissä, ei kuukausissa."
+  },
+  "careers": {
+    "hero_eyebrow": "Haemme tekijöitä",
+    "hero_headingPre": "Rakenna uraasi ",
+    "hero_headingHighlight": "Happy2Techissä",
+    "hero_description": "Liity pieneen, nopeasti liikkuvaan tiimiin, joka rakentaa oikeita tuotteita oikeille asiakkaille ympäri Eurooppaa ja sen ulkopuolella.",
+    "hero_pill1": "Etätyöystävällinen",
+    "hero_pill2": "Oikeaa asiakastyötä",
+    "hero_pill3": "Mentorointi mukana",
+
+    "openingsBadge": "Avoimet paikat",
+    "openingsHeading": "Avoimet työpaikat",
+    "openingsSub": "Harjoittelupaikkoja haettavissa nyt — hae muutamassa minuutissa.",
+
+    "tagInternship": "Harjoittelu",
+    "tagFulltime": "Kokopäiväinen",
+    "tagLocation": "Hybridi / Etä",
+    "tagStudent": "Sopii opiskelijalle",
+    "tagUnpaid": "Palkaton",
+    "apply": "Hae nyt",
+    "applyIntro": "Hei Happy2Tech, olen kiinnostunut {title}-tehtävästä.",
+    "applyOutro": "Kerrothan lisää seuraavista askelista ja hakemisesta.",
+
+    "marketingIntern_title": "Markkinointiharjoittelija",
+    "marketingIntern_description": "Opi digitaalista markkinointia käytännössä — sisältöä, sosiaalista mediaa ja kampanjoita ensimmäisestä päivästä lähtien.",
+    "marketingIntern_bullet1": "Avusta sisältö- ja someaikatauluissa",
+    "marketingIntern_bullet2": "Auta kampanjoiden toteutuksessa ja raportoinnissa",
+    "marketingIntern_bullet3": "Opi suoraan tiimiltä",
+
+    "businessDevelopmentIntern_title": "Liiketoiminnan kehityksen harjoittelija",
+    "businessDevelopmentIntern_description": "Opi myyntiä ja asiakastyötä — tue liidien hankintaa, rajausta ja koko myyntiputkea.",
+    "businessDevelopmentIntern_bullet1": "Tutki ja tunnista potentiaalisia asiakkaita",
+    "businessDevelopmentIntern_bullet2": "Osallistu rajaus- ja myyntipuheluihin",
+    "businessDevelopmentIntern_bullet3": "Avusta tarjousten valmistelussa ja seurannassa",
+
+    "humanResourcesIntern_title": "HR-harjoittelija",
+    "humanResourcesIntern_description": "Pääse kiinni henkilöstöhallintoon — tue rekrytointia, perehdytystä ja tiimikulttuuria ensimmäisestä päivästä lähtien.",
+    "humanResourcesIntern_bullet1": "Avusta hakijoiden seulonnassa ja koordinoinnissa",
+    "humanResourcesIntern_bullet2": "Tue perehdytystä ja HR-hallintoa",
+    "humanResourcesIntern_bullet3": "Osallistu kulttuuri- ja tiimitapahtumiin",
+
+    "whyHeadingPre": "Miksi rakentaa uraa ",
+    "whyHeadingHighlight": "Happy2Techissä",
+    "whySub": "Neljä syytä, miksi tiimimme kasvaa jatkuvasti.",
+    "why1_title": "Toimitamme jo ensimmäisellä viikolla",
+    "why1_body": "Useimmat projektit käynnistyvät 2–4 päivässä. Työsi koskettaa oikeita asiakkaita heti alusta — ei loputonta jonoa.",
+    "why2_title": "Suomen markkinan tuntemus",
+    "why2_body": "Markkinointi, työtavat ja GDPR ovat lähtökohtia. Opi paikalliset säännöt, joilla on oikeasti merkitystä.",
+    "why3_title": "Etätyöystävällinen",
+    "why3_body": "Työskentele kotoa tai studiolta joustavin työajoin, pienessä ja fokusoituneessa tiimissä.",
+    "why4_title": "Opi ja kasva nopeasti",
+    "why4_body": "Harjoittelijat saavat aitoa mentorointia, todistuksen ja nopean polun palkalliseen rooliin studion kasvaessa.",
+
+    "ctaHeadingLine1": "Etkö löytänyt sopivaa roolia?",
+    "ctaHeadingLine2": "Ehdota itseäsi silti.",
+    "ctaDescription": "Haluamme aina tavata taitavia kehittäjiä, suunnittelijoita, markkinoijia ja kasvun rakentajia. Lähetä CV:si ja kerro, miten auttaisit asiakkaitamme kasvamaan — vastaamme muutamassa päivässä.",
+    "ctaButton1": "Lähetä avoin hakemus",
+    "ctaButton2": "Katso avoimet paikat",
+    "ctaOpenAppMessage": "Hei Happy2Tech, en löytänyt juuri nyt sopivaa avointa roolia, mutta haluaisin tulla huomioiduksi tulevissa mahdollisuuksissa.\n\nTässä hieman itsestäni ja siitä, mitä voisin tuoda tiimiin:"
   }
 }

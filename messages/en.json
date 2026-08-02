@@ -4,7 +4,8 @@
     "services": "Services",
     "contact": "Contact Us",
     "vision": "Vision",
-    "campaigns": "Promotions"
+    "campaigns": "Promotions",
+    "careers": "Careers"
   },
   "hero": {
     "title": "Helping Businesses Grow \nThrough Smart Technology",
@@ -83,7 +84,8 @@
     "footerTerms": "Terms of Service",
     "footerCookies": "Cookies Settings",
     "footerGdpr": "GDPR Protection Statement",
-    "linkCampaigns": "Promotions"
+    "linkCampaigns": "Promotions",
+    "linkCareers": "Careers"
   },
   "services": {
     "heading": "OUR SERVICES",
@@ -168,6 +170,7 @@
     "topicProject": "Project Request",
     "topicPartnership": "Partnership",
     "topicSupport": "Support",
+    "topicCareers": "Careers",
     "roleLabel": "What describes your role",
     "roleDesigner": "Designer",
     "roleDeveloper": "Developer",
@@ -262,6 +265,7 @@
     "common_mostPopular": "Most popular",
     "common_customQuote": "Custom quote",
     "common_bestFit": "Best fit",
+    "common_viewSamples": "View {count} sample designs",
     "websites_heading": "Websites",
     "websites_description": "From a single-page presence to a content-rich e-commerce build. Every tier ships mobile-first, Google-ready, and Finnish-market tuned.",
     "websites_pillNote": "Updated June 2026",
@@ -516,5 +520,64 @@
     "headingPre": "Build your first ",
     "headingHighlight": "AI agent",
     "headingPost": " with us — live in days, not months."
+  },
+  "careers": {
+    "hero_eyebrow": "We're hiring",
+    "hero_headingPre": "Build your career at ",
+    "hero_headingHighlight": "Happy2Tech",
+    "hero_description": "Join a small, fast-moving team building real products for real clients across Europe and beyond.",
+    "hero_pill1": "Remote-friendly",
+    "hero_pill2": "Real client work",
+    "hero_pill3": "Mentorship built in",
+
+    "openingsBadge": "Open positions",
+    "openingsHeading": "Current openings",
+    "openingsSub": "Internships open now — apply in minutes.",
+
+    "tagInternship": "Internship",
+    "tagFulltime": "Full-time",
+    "tagLocation": "Hybrid / Remote",
+    "tagStudent": "Student OK",
+    "tagUnpaid": "Unpaid",
+    "apply": "Apply now",
+    "applyIntro": "Hi Happy2Tech, I'm interested in the {title} position.",
+    "applyOutro": "Please share more details about next steps and how to apply.",
+
+    "marketingIntern_title": "Marketing Intern",
+    "marketingIntern_description": "Learn digital marketing hands-on — content, social and campaigns from day one.",
+    "marketingIntern_bullet1": "Support content & social calendars",
+    "marketingIntern_bullet2": "Help run and report on campaigns",
+    "marketingIntern_bullet3": "Learn directly from the team",
+
+    "businessDevelopmentIntern_title": "Business Development Intern",
+    "businessDevelopmentIntern_description": "Learn sales and client work — support outreach, scoping, and the full pipeline.",
+    "businessDevelopmentIntern_bullet1": "Research & qualify potential clients",
+    "businessDevelopmentIntern_bullet2": "Sit in on scoping and sales calls",
+    "businessDevelopmentIntern_bullet3": "Help prepare quotes & follow-ups",
+
+    "humanResourcesIntern_title": "Human Resources Intern",
+    "humanResourcesIntern_description": "Get into people ops — support hiring, onboarding and team culture from day one.",
+    "humanResourcesIntern_bullet1": "Help screen & coordinate candidates",
+    "humanResourcesIntern_bullet2": "Support onboarding & HR admin",
+    "humanResourcesIntern_bullet3": "Assist with culture & team events",
+
+    "whyHeadingPre": "Why build your career at ",
+    "whyHeadingHighlight": "Happy2Tech",
+    "whySub": "Four reasons our team keeps growing.",
+    "why1_title": "Ship from week one",
+    "why1_body": "Most projects launch in 2–4 days. Your work touches real clients from day one — no endless backlog.",
+    "why2_title": "Finnish-market fluent",
+    "why2_body": "Marketing, workflows, and GDPR-first by default. Learn the local rules that actually matter.",
+    "why3_title": "Remote-friendly",
+    "why3_body": "Work from home or the studio, with flexible hours and a small, focused team.",
+    "why4_title": "Learn & grow fast",
+    "why4_body": "Interns get real mentorship, a certificate, and a fast track to a paid role as the studio grows.",
+
+    "ctaHeadingLine1": "Don't see the perfect role?",
+    "ctaHeadingLine2": "Pitch us anyway.",
+    "ctaDescription": "We're always keen to meet sharp developers, designers, marketers and growth builders. Send us your CV and tell us how you'd help our clients grow — we reply within days.",
+    "ctaButton1": "Send an open application",
+    "ctaButton2": "View open roles",
+    "ctaOpenAppMessage": "Hi Happy2Tech, I don't see an open role that fits right now, but I'd love to be considered for future opportunities.\n\nHere's a bit about me and what I could bring to the team:"
   }
 }

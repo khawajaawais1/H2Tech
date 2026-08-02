@@ -85,6 +85,11 @@ const Footer = () => {
                     {t("linkContact")}
                   </Link>
                 </li>
+                <li>
+                  <Link href={`/${locale}/careers`} className="text-sm text-white/70 hover:text-white transition-colors">
+                    {t("linkCareers")}
+                  </Link>
+                </li>
               </ul>
             </div>
 
