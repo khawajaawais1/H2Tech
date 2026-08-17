@@ -113,11 +113,11 @@ const Footer = () => {
                     <IconYoutube /> YouTube
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="https://www.facebook.com/" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+                <li>
+                  <Link href="https://www.facebook.com/61591123237422/" target="_blank" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                     <IconFacebook /> Facebook
                   </Link>
-                </li> */}
+                </li>
 
               </ul>
             </div>
