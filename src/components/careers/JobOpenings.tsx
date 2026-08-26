@@ -99,7 +99,7 @@ const JobOpenings = () => {
 
                 <div className="mt-3 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-amber-700">
                   <WalletIcon />
-                  {t("tagUnpaid")}
+                  {t("tagBonus")}
                 </div>
 
                 <div className="my-4 h-px bg-black/8" />

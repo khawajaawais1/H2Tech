@@ -535,10 +535,10 @@
     "openingsSub": "Harjoittelupaikkoja haettavissa nyt — hae muutamassa minuutissa.",
 
     "tagInternship": "Harjoittelu",
-    "tagFulltime": "Kokopäiväinen",
+    "tagFulltime": "Osa-aikainen",
     "tagLocation": "Hybridi / Etä",
     "tagStudent": "Sopii opiskelijalle",
-    "tagUnpaid": "Palkaton",
+    "tagBonus": "Tulokseen perustuva bonus",
     "apply": "Hae nyt",
     "applyIntro": "Hei Happy2Tech, olen kiinnostunut {title}-tehtävästä.",
     "applyOutro": "Kerrothan lisää seuraavista askelista ja hakemisesta.",
