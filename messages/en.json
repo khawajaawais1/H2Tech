@@ -535,10 +535,10 @@
     "openingsSub": "Internships open now — apply in minutes.",
 
     "tagInternship": "Internship",
-    "tagFulltime": "Full-time",
+    "tagFulltime": "Part-time",
     "tagLocation": "Hybrid / Remote",
     "tagStudent": "Student OK",
-    "tagUnpaid": "Unpaid",
+    "tagBonus": "Performance-based bonus",
     "apply": "Apply now",
     "applyIntro": "Hi Happy2Tech, I'm interested in the {title} position.",
     "applyOutro": "Please share more details about next steps and how to apply.",
