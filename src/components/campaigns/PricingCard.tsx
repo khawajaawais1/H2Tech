@@ -68,6 +68,8 @@ const PricingCard = ({
   const [activeSite, setActiveSite] = useState<number | null>(null);
   const [activePage, setActivePage] = useState(0);
   const priceValue = tier.priceFrom ? Number(tier.priceFrom.replace(/[^\d]/g, "")) : 0;
+  const priceToValue = tier.priceTo ? Number(tier.priceTo.replace(/[^\d]/g, "")) : 0;
+  const priceOpenEnded = tier.priceFrom?.endsWith("+") ?? false;
   const contactMessage = [
     `Hi Happy2Tech, I'm interested in the ${t(`${prefix}_name`)} plan under ${t(`${categoryId}_heading`)}.`,
     "",
@@ -337,11 +339,19 @@ const PricingCard = ({
           </div>
         ) : (
           <>
-            <span className="text-[11px] font-bold uppercase tracking-wide text-black/45">
-              {t("common_from")}
-            </span>
+            {!priceToValue && !priceOpenEnded && (
+              <span className="text-[11px] font-bold uppercase tracking-wide text-black/45">
+                {t("common_from")}
+              </span>
+            )}
             <span className="inline-block min-w-[92px] text-[34px] font-extrabold tabular-nums tracking-tight text-[#0D1235]">
               <CountUp prefix="€" value={priceValue} />
+              {priceToValue > 0 && (
+                <>
+                  –<CountUp value={priceToValue} />
+                </>
+              )}
+              {priceOpenEnded && "+"}
             </span>
           </>
         )}
