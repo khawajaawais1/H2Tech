@@ -6,6 +6,7 @@ export type PricingTier = {
   id: string;
   featured?: boolean;
   priceFrom?: string;
+  priceTo?: string;
   quote?: { variant: QuoteVariant };
 };
 
@@ -32,10 +33,10 @@ export const categories: ServiceCategory[] = [
       </svg>
     ),
     tiers: [
-      { id: "tier1", priceFrom: "€99" },
-      { id: "tier2", featured: true, priceFrom: "€199" },
-      { id: "tier3", priceFrom: "€499" },
-      { id: "tier4", priceFrom: "€699" },
+      { id: "tier1", priceFrom: "€99", priceTo: "€199" },
+      { id: "tier2", featured: true, priceFrom: "€399" },
+      { id: "tier3", priceFrom: "€699" },
+      { id: "tier4", priceFrom: "€3000+" },
     ],
   },
   {
