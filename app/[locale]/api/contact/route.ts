@@ -56,13 +56,23 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const escapeHtml = (value: unknown) =>
+  String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { firstName, lastName, email, phone, topic, role, message, agreed } = body;
+    const { firstName, lastName, email, phone, topic, role, message, agreed, source } = body;
+    const fromChatbot = source === "chatbot";
 
-    if (!firstName || !lastName || !email || !topic || !message || !agreed) {
+    // The chatbot only asks for a single name field, so last name is optional there.
+    if (!firstName || (!lastName && !fromChatbot) || !email || !topic || !message || !agreed) {
       return NextResponse.json(
         { message: "Please fill in all required fields." },
         { status: 400 }
@@ -92,18 +102,20 @@ export async function POST(req: Request) {
       from: `"Happy2Tech Contact Form" <${process.env.SMTP_USER}>`,
       to: "info@happy2tech.fi",
       replyTo: email,
-      subject: `New Contact Form Submission: ${topic}`,
+      subject: fromChatbot
+        ? `New Chatbot Message from ${firstName} ${lastName || ""}`.trim()
+        : `New Contact Form Submission: ${topic}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>First name:</strong> ${firstName}</p>
-        <p><strong>Last name:</strong> ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Topic:</strong> ${topic}</p>
-        <p><strong>Role:</strong> ${role || "N/A"}</p>
+        <h2>${fromChatbot ? "New Message from the Website Chatbot" : "New Contact Form Submission"}</h2>
+        <p><strong>First name:</strong> ${escapeHtml(firstName)}</p>
+        <p><strong>Last name:</strong> ${escapeHtml(lastName || "N/A")}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "N/A")}</p>
+        <p><strong>Topic:</strong> ${escapeHtml(topic)}</p>
+        <p><strong>Role:</strong> ${escapeHtml(role || "N/A")}</p>
         <p><strong>Agreed to terms:</strong> ${agreed ? "Yes" : "No"}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replaceAll("\n", "<br/>")}</p>
+        <p>${escapeHtml(message).replaceAll("\n", "<br/>")}</p>
       `,
     });
 

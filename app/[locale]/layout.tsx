@@ -4,6 +4,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/src/i18n/routing';
 import { Inter } from "next/font/google";
+import Chatbot from "@/src/components/chatbot/Chatbot";
 import path from 'path';
 import fs from 'fs';
 
@@ -131,6 +132,7 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <Chatbot />
         </NextIntlClientProvider>
       </body>
     </html>

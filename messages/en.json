@@ -529,11 +529,9 @@
     "hero_pill1": "Remote-friendly",
     "hero_pill2": "Real client work",
     "hero_pill3": "Mentorship built in",
-
     "openingsBadge": "Open positions",
     "openingsHeading": "Current openings",
     "openingsSub": "Internships open now — apply in minutes.",
-
     "tagInternship": "Internship",
     "tagFulltime": "Part-time",
     "tagLocation": "Hybrid / Remote",
@@ -542,25 +540,21 @@
     "apply": "Apply now",
     "applyIntro": "Hi Happy2Tech, I'm interested in the {title} position.",
     "applyOutro": "Please share more details about next steps and how to apply.",
-
     "marketingIntern_title": "Marketing Intern",
     "marketingIntern_description": "Learn digital marketing hands-on — content, social and campaigns from day one.",
     "marketingIntern_bullet1": "Support content & social calendars",
     "marketingIntern_bullet2": "Help run and report on campaigns",
     "marketingIntern_bullet3": "Learn directly from the team",
-
     "businessDevelopmentIntern_title": "Business Development Intern",
     "businessDevelopmentIntern_description": "Learn sales and client work — support outreach, scoping, and the full pipeline.",
     "businessDevelopmentIntern_bullet1": "Research & qualify potential clients",
     "businessDevelopmentIntern_bullet2": "Sit in on scoping and sales calls",
     "businessDevelopmentIntern_bullet3": "Help prepare quotes & follow-ups",
-
     "humanResourcesIntern_title": "Human Resources Intern",
     "humanResourcesIntern_description": "Get into people ops — support hiring, onboarding and team culture from day one.",
     "humanResourcesIntern_bullet1": "Help screen & coordinate candidates",
     "humanResourcesIntern_bullet2": "Support onboarding & HR admin",
     "humanResourcesIntern_bullet3": "Assist with culture & team events",
-
     "whyHeadingPre": "Why build your career at ",
     "whyHeadingHighlight": "Happy2Tech",
     "whySub": "Four reasons our team keeps growing.",
@@ -572,12 +566,33 @@
     "why3_body": "Work from home or the studio, with flexible hours and a small, focused team.",
     "why4_title": "Learn & grow fast",
     "why4_body": "Interns get real mentorship, a certificate, and a fast track to a paid role as the studio grows.",
-
     "ctaHeadingLine1": "Don't see the perfect role?",
     "ctaHeadingLine2": "Pitch us anyway.",
     "ctaDescription": "We're always keen to meet sharp developers, designers, marketers and growth builders. Send us your CV and tell us how you'd help our clients grow — we reply within days.",
     "ctaButton1": "Send an open application",
     "ctaButton2": "View open roles",
     "ctaOpenAppMessage": "Hi Happy2Tech, I don't see an open role that fits right now, but I'd love to be considered for future opportunities.\n\nHere's a bit about me and what I could bring to the team:"
+  },
+  "chatbot": {
+    "title": "H2Tech Assistant",
+    "subtitle": "Typically replies instantly",
+    "open": "Open chat",
+    "close": "Close chat",
+    "restart": "Start over",
+    "welcome": "Hi! 👋 I'm the Happy2Tech assistant. Ask me about our services, pricing or timelines — or pick a topic below.",
+    "fallback": "Sorry, I'm not sure I understood that. 🤔 I can send your question to our support team by email, or you can choose one of the topics below.",
+    "inputPlaceholder": "Type your question…",
+    "sendMessage": "Send message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "How can we help?",
+    "send": "Send to support",
+    "sending": "Sending…",
+    "consent": "By sending, you agree that Happy2Tech may contact you by email about your request.",
+    "sent": "Thanks! ✅ Your message has been sent to our support team. We'll reply to {email} as soon as possible, usually within one business day.",
+    "sendError": "Sorry, we couldn't send your message right now. Please email us at info@happy2tech.fi.",
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorMessage": "Please write a short message."
   }
 }

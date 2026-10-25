@@ -529,11 +529,9 @@
     "hero_pill1": "Etätyöystävällinen",
     "hero_pill2": "Oikeaa asiakastyötä",
     "hero_pill3": "Mentorointi mukana",
-
     "openingsBadge": "Avoimet paikat",
     "openingsHeading": "Avoimet työpaikat",
     "openingsSub": "Harjoittelupaikkoja haettavissa nyt — hae muutamassa minuutissa.",
-
     "tagInternship": "Harjoittelu",
     "tagFulltime": "Osa-aikainen",
     "tagLocation": "Hybridi / Etä",
@@ -542,25 +540,21 @@
     "apply": "Hae nyt",
     "applyIntro": "Hei Happy2Tech, olen kiinnostunut {title}-tehtävästä.",
     "applyOutro": "Kerrothan lisää seuraavista askelista ja hakemisesta.",
-
     "marketingIntern_title": "Markkinointiharjoittelija",
     "marketingIntern_description": "Opi digitaalista markkinointia käytännössä — sisältöä, sosiaalista mediaa ja kampanjoita ensimmäisestä päivästä lähtien.",
     "marketingIntern_bullet1": "Avusta sisältö- ja someaikatauluissa",
     "marketingIntern_bullet2": "Auta kampanjoiden toteutuksessa ja raportoinnissa",
     "marketingIntern_bullet3": "Opi suoraan tiimiltä",
-
     "businessDevelopmentIntern_title": "Liiketoiminnan kehityksen harjoittelija",
     "businessDevelopmentIntern_description": "Opi myyntiä ja asiakastyötä — tue liidien hankintaa, rajausta ja koko myyntiputkea.",
     "businessDevelopmentIntern_bullet1": "Tutki ja tunnista potentiaalisia asiakkaita",
     "businessDevelopmentIntern_bullet2": "Osallistu rajaus- ja myyntipuheluihin",
     "businessDevelopmentIntern_bullet3": "Avusta tarjousten valmistelussa ja seurannassa",
-
     "humanResourcesIntern_title": "HR-harjoittelija",
     "humanResourcesIntern_description": "Pääse kiinni henkilöstöhallintoon — tue rekrytointia, perehdytystä ja tiimikulttuuria ensimmäisestä päivästä lähtien.",
     "humanResourcesIntern_bullet1": "Avusta hakijoiden seulonnassa ja koordinoinnissa",
     "humanResourcesIntern_bullet2": "Tue perehdytystä ja HR-hallintoa",
     "humanResourcesIntern_bullet3": "Osallistu kulttuuri- ja tiimitapahtumiin",
-
     "whyHeadingPre": "Miksi rakentaa uraa ",
     "whyHeadingHighlight": "Happy2Techissä",
     "whySub": "Neljä syytä, miksi tiimimme kasvaa jatkuvasti.",
@@ -572,12 +566,33 @@
     "why3_body": "Työskentele kotoa tai studiolta joustavin työajoin, pienessä ja fokusoituneessa tiimissä.",
     "why4_title": "Opi ja kasva nopeasti",
     "why4_body": "Harjoittelijat saavat aitoa mentorointia, todistuksen ja nopean polun palkalliseen rooliin studion kasvaessa.",
-
     "ctaHeadingLine1": "Etkö löytänyt sopivaa roolia?",
     "ctaHeadingLine2": "Ehdota itseäsi silti.",
     "ctaDescription": "Haluamme aina tavata taitavia kehittäjiä, suunnittelijoita, markkinoijia ja kasvun rakentajia. Lähetä CV:si ja kerro, miten auttaisit asiakkaitamme kasvamaan — vastaamme muutamassa päivässä.",
     "ctaButton1": "Lähetä avoin hakemus",
     "ctaButton2": "Katso avoimet paikat",
     "ctaOpenAppMessage": "Hei Happy2Tech, en löytänyt juuri nyt sopivaa avointa roolia, mutta haluaisin tulla huomioiduksi tulevissa mahdollisuuksissa.\n\nTässä hieman itsestäni ja siitä, mitä voisin tuoda tiimiin:"
+  },
+  "chatbot": {
+    "title": "H2Tech-avustaja",
+    "subtitle": "Vastaa yleensä heti",
+    "open": "Avaa chat",
+    "close": "Sulje chat",
+    "restart": "Aloita alusta",
+    "welcome": "Hei! 👋 Olen Happy2Techin avustaja. Kysy palveluistamme, hinnoista tai aikatauluista — tai valitse aihe alta.",
+    "fallback": "Pahoittelen, en ihan ymmärtänyt. 🤔 Voin lähettää kysymyksesi tukitiimillemme sähköpostitse, tai voit valita jonkin alla olevista aiheista.",
+    "inputPlaceholder": "Kirjoita kysymyksesi…",
+    "sendMessage": "Lähetä viesti",
+    "namePlaceholder": "Nimesi",
+    "emailPlaceholder": "Sähköpostisi",
+    "messagePlaceholder": "Miten voimme auttaa?",
+    "send": "Lähetä tuelle",
+    "sending": "Lähetetään…",
+    "consent": "Lähettämällä hyväksyt, että Happy2Tech voi ottaa sinuun yhteyttä sähköpostitse pyyntöösi liittyen.",
+    "sent": "Kiitos! ✅ Viestisi on lähetetty tukitiimillemme. Vastaamme osoitteeseen {email} mahdollisimman pian, yleensä yhden arkipäivän sisällä.",
+    "sendError": "Pahoittelemme, viestiä ei voitu lähettää juuri nyt. Lähetä meille sähköpostia osoitteeseen info@happy2tech.fi.",
+    "errorName": "Kirjoita nimesi.",
+    "errorEmail": "Anna kelvollinen sähköpostiosoite.",
+    "errorMessage": "Kirjoita lyhyt viesti."
   }
 }
