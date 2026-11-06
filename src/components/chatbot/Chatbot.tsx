@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -11,6 +10,7 @@ import {
   type ChatIntent,
   type ChatLocale,
 } from "@/src/data/chatbotIntents";
+import BotAvatar from "./BotAvatar";
 
 type Message = {
   id: number;
@@ -59,7 +59,7 @@ const Chatbot = () => {
     if (!open) return;
     setUnread(false);
     if (messages.length === 0) push({ from: "bot", text: t("welcome") });
-    setTimeout(() => inputRef.current?.focus(), 200);
+    if (window.matchMedia("(min-width: 640px)").matches) setTimeout(() => inputRef.current?.focus(), 200);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
@@ -70,6 +70,15 @@ const Chatbot = () => {
   useEffect(() => () => {
     if (typingTimer.current) clearTimeout(typingTimer.current);
   }, []);
+
+  useEffect(() => {
+    if (!open || !window.matchMedia("(max-width: 639px)").matches) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -201,16 +210,16 @@ const Chatbot = () => {
         <div
           role="dialog"
           aria-label={t("title")}
-          className="h2t-panel fixed inset-x-3 bottom-24 z-[60] flex max-h-[min(640px,calc(100dvh-7.5rem))] flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_60px_-12px_rgba(5,10,48,0.45)] sm:inset-x-auto sm:right-6 sm:w-[380px]"
+          className="h2t-panel fixed inset-0 z-[70] flex h-[100dvh] flex-col overflow-hidden bg-white sm:inset-auto sm:bottom-24 sm:right-6 sm:h-[600px] sm:max-h-[calc(100dvh-7.5rem)] sm:w-[380px] sm:rounded-2xl sm:border sm:border-black/10 sm:shadow-[0_24px_60px_-12px_rgba(5,10,48,0.45)]"
         >
           {/* Header */}
-          <div className="relative flex items-center gap-3 overflow-hidden bg-[#050A30] px-4 py-3.5 text-white">
+          <div className="relative flex shrink-0 items-center gap-3 overflow-hidden bg-[#050A30] px-4 pb-3.5 pt-[max(0.875rem,env(safe-area-inset-top))] text-white sm:pt-3.5">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: "radial-gradient(circle at 15% 20%, rgba(38,72,255,0.28) 0%, transparent 50%), radial-gradient(circle at 90% 90%, rgba(177,13,16,0.35) 0%, transparent 55%)" }}
             />
-            <div className="relative h-11 w-11 shrink-0 rounded-full bg-[#0B1245] ring-2 ring-[#B10D10]/70">
-              <Image src="/logo.png" alt="" fill sizes="44px" className="scale-125 object-contain" />
+            <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e8f3ff] ring-2 ring-[#B10D10]/70">
+              <BotAvatar className="h-9 w-9" />
               <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[#050A30] bg-emerald-400" />
             </div>
             <div className="relative min-w-0 flex-1">
@@ -246,14 +255,14 @@ const Chatbot = () => {
             {messages.map((m) =>
               m.from === "user" ? (
                 <div key={m.id} className="h2t-msg flex justify-end">
-                  <p className="max-w-[80%] whitespace-pre-line rounded-2xl rounded-br-md bg-[#B10D10] px-3.5 py-2.5 text-[13.5px] leading-relaxed text-white">
+                  <p className="max-w-[85%] whitespace-pre-line rounded-2xl sm:max-w-[80%] rounded-br-md bg-[#B10D10] px-3.5 py-2.5 text-[13.5px] leading-relaxed text-white">
                     {m.text}
                   </p>
                 </div>
               ) : (
                 <div key={m.id} className="h2t-msg flex items-end gap-2">
-                  <div className="relative h-7 w-7 shrink-0 rounded-full bg-[#050A30]">
-                    <Image src="/logo.png" alt="" fill sizes="28px" className="scale-125 object-contain" />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f3ff]">
+                    <BotAvatar className="h-6 w-6" />
                   </div>
                   <div className="max-w-[82%] rounded-2xl rounded-bl-md border border-black/5 bg-white px-3.5 py-2.5 text-[13.5px] leading-relaxed text-[#0D1235] shadow-sm">
                     <p className="whitespace-pre-line">{m.text}</p>
@@ -275,7 +284,7 @@ const Chatbot = () => {
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           placeholder={t("namePlaceholder")}
                           autoComplete="name"
-                          className="h-10 w-full rounded-lg border border-black/15 px-3 text-[13px] outline-none focus:border-[#050A30]"
+                          className="h-11 w-full rounded-lg border border-black/15 px-3 text-base sm:h-10 sm:text-[13px] outline-none focus:border-[#050A30]"
                         />
                         <input
                           type="email"
@@ -283,20 +292,20 @@ const Chatbot = () => {
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
                           placeholder={t("emailPlaceholder")}
                           autoComplete="email"
-                          className="h-10 w-full rounded-lg border border-black/15 px-3 text-[13px] outline-none focus:border-[#050A30]"
+                          className="h-11 w-full rounded-lg border border-black/15 px-3 text-base sm:h-10 sm:text-[13px] outline-none focus:border-[#050A30]"
                         />
                         <textarea
                           value={form.message}
                           onChange={(e) => setForm({ ...form, message: e.target.value })}
                           placeholder={t("messagePlaceholder")}
                           rows={3}
-                          className="w-full resize-none rounded-lg border border-black/15 px-3 py-2 text-[13px] outline-none focus:border-[#050A30]"
+                          className="w-full resize-none rounded-lg border border-black/15 px-3 py-2 text-base sm:text-[13px] outline-none focus:border-[#050A30]"
                         />
                         {formError && <p className="text-xs text-[#B10D10]">{formError}</p>}
                         <button
                           type="submit"
                           disabled={sendState === "sending"}
-                          className="h-10 w-full rounded-lg bg-[#050A30] text-[13px] font-semibold text-white transition hover:bg-[#0B1245] disabled:opacity-60"
+                          className="h-11 w-full rounded-lg bg-[#050A30] text-sm sm:h-10 sm:text-[13px] font-semibold text-white transition hover:bg-[#0B1245] disabled:opacity-60"
                         >
                           {sendState === "sending" ? t("sending") : t("send")}
                         </button>
@@ -310,8 +319,8 @@ const Chatbot = () => {
 
             {typing && (
               <div className="flex items-end gap-2">
-                <div className="relative h-7 w-7 shrink-0 rounded-full bg-[#050A30]">
-                  <Image src="/logo.png" alt="" fill sizes="28px" className="scale-125 object-contain" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f3ff]">
+                  <BotAvatar className="h-6 w-6" />
                 </div>
                 <div className="h2t-typing flex gap-1 rounded-2xl rounded-bl-md border border-black/5 bg-white px-4 py-3.5 shadow-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#050A30]" />
@@ -324,7 +333,7 @@ const Chatbot = () => {
 
           {/* Suggestions */}
           {suggestions.length > 0 && !typing && (
-            <div className="flex gap-2 overflow-x-auto border-t border-black/5 bg-white px-3 py-2.5 [scrollbar-width:none]">
+            <div className="flex shrink-0 gap-2 overflow-x-auto border-t border-black/5 bg-white px-3 py-2.5 [scrollbar-width:none]">
               {suggestions.map((id) => {
                 const intent = getIntent(id);
                 if (!intent) return null;
@@ -333,7 +342,7 @@ const Chatbot = () => {
                     key={id}
                     type="button"
                     onClick={() => pickSuggestion(id)}
-                    className={`shrink-0 rounded-full border px-3 py-1.5 text-[12.5px] font-medium transition ${
+                    className={`shrink-0 rounded-full border px-3.5 py-2 text-[13px] sm:px-3 sm:py-1.5 sm:text-[12.5px] font-medium transition ${
                       id === "human"
                         ? "border-[#B10D10]/30 bg-[#B10D10]/5 text-[#B10D10] hover:bg-[#B10D10]/10"
                         : "border-[#050A30]/15 text-[#050A30] hover:border-[#050A30]/40 hover:bg-[#050A30]/5"
@@ -352,7 +361,7 @@ const Chatbot = () => {
               e.preventDefault();
               sendText(input);
             }}
-            className="flex items-center gap-2 border-t border-black/10 bg-white px-3 py-3"
+            className="flex shrink-0 items-center gap-2 border-t border-black/10 bg-white px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 sm:pb-3"
           >
             <input
               ref={inputRef}
@@ -361,13 +370,13 @@ const Chatbot = () => {
               placeholder={t("inputPlaceholder")}
               maxLength={500}
               aria-label={t("inputPlaceholder")}
-              className="h-10 min-w-0 flex-1 rounded-full bg-[#f1f2f6] px-4 text-[13.5px] text-[#0D1235] outline-none placeholder:text-black/40 focus:ring-2 focus:ring-[#050A30]/15"
+              className="h-11 min-w-0 flex-1 rounded-full bg-[#f1f2f6] px-4 text-base sm:h-10 sm:text-[13.5px] text-[#0D1235] outline-none placeholder:text-black/40 focus:ring-2 focus:ring-[#050A30]/15"
             />
             <button
               type="submit"
               disabled={!input.trim() || typing}
               aria-label={t("sendMessage")}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#B10D10] text-white transition hover:bg-[#980b0b] disabled:opacity-40"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#B10D10] sm:h-10 sm:w-10 text-white transition hover:bg-[#980b0b] disabled:opacity-40"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 2L11 13" />
@@ -384,7 +393,7 @@ const Chatbot = () => {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? t("close") : t("open")}
         aria-expanded={open}
-        className="group fixed bottom-5 right-5 z-[60] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#050A30] shadow-[0_12px_30px_-6px_rgba(5,10,48,0.6)] ring-2 ring-[#B10D10] transition hover:scale-105 sm:bottom-6 sm:right-6"
+        className={`group fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-30 h-14 w-14 items-center justify-center rounded-full bg-[#050A30] shadow-[0_12px_30px_-6px_rgba(5,10,48,0.6)] ring-2 ring-[#B10D10] transition hover:scale-105 sm:bottom-6 sm:right-6 sm:flex sm:h-[60px] sm:w-[60px] ${open ? "hidden" : "flex"}`}
       >
         {!open && <span className="h2t-ring pointer-events-none absolute inset-0 rounded-full ring-2 ring-[#B10D10]" />}
         {open ? (
@@ -393,9 +402,7 @@ const Chatbot = () => {
           </svg>
         ) : (
           <>
-            <span className="relative h-11 w-11">
-              <Image src="/logo.png" alt="" fill sizes="44px" className="scale-125 object-contain" />
-            </span>
+            <BotAvatar className="h-11 w-11 drop-shadow-[0_0_8px_rgba(110,231,255,0.35)] transition-transform group-hover:-rotate-6 sm:h-12 sm:w-12" />
             <span className="absolute -bottom-0.5 -left-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#B10D10] shadow ring-2 ring-white">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="white">
                 <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
