@@ -499,7 +499,7 @@
     "blackWeek_eyebrow": "Rajoitettu tarjous",
     "blackWeek_title": "Black Week",
     "blackWeek_offerPre": "-20 %",
-    "blackWeek_offerHighlight": "kaikista palveluista",
+    "blackWeek_offerHighlight": "kaikista palveluista*",
     "blackWeek_description": "Verkkosivut, mobiilisovellukset, verkkosovellukset ja tekoälyagentit — kaikki paketit 20 % edullisemmin, kun varaat ennen tarjouksen päättymistä.",
     "blackWeek_endsIn": "Tarjous päättyy",
     "blackWeek_days": "Päivää",
@@ -510,9 +510,13 @@
     "blackWeek_validUntil": "Tarjous voimassa 30.11.2026 asti",
     "blackWeek_contactMessage": "Hei Happy2Tech, haluaisin hyödyntää Black Week -tarjouksen (-20 %).\n\nPalvelu, josta olen kiinnostunut: \n\nKertokaa seuraavat askeleet ja tarjous.",
     "common_blackWeekBadge": "Black Week -20 %",
-    "common_blackWeekPrice": "Erikoistarjous: {price}",
     "common_blackWeekQuote": "-20 % tarjouksesta",
-    "common_blackWeekUntil": "30.11. asti"
+    "common_blackWeekUntil": "30.11. asti",
+    "blackWeek_excludes": "*Ei koske Starter-verkkosivupakettia.",
+    "blackWeek_daysShort": "pv",
+    "blackWeek_stripOffer": "-20 % kaikista palveluista",
+    "blackWeek_stripCta": "Katso tarjoukset",
+    "common_blackWeekSale": "Black Week -hinta"
   },
   "aiShowcase": {
     "eyebrow": "Tekoälyn voimalla",

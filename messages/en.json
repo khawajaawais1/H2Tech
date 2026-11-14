@@ -499,7 +499,7 @@
     "blackWeek_eyebrow": "Limited-time offer",
     "blackWeek_title": "Black Week",
     "blackWeek_offerPre": "Flat 20% off",
-    "blackWeek_offerHighlight": "on all services",
+    "blackWeek_offerHighlight": "on all services*",
     "blackWeek_description": "Websites, mobile apps, web apps and AI agents — every package is 20% off when you book before the offer ends.",
     "blackWeek_endsIn": "Offer ends in",
     "blackWeek_days": "Days",
@@ -510,9 +510,13 @@
     "blackWeek_validUntil": "Offer valid until 30 November 2026",
     "blackWeek_contactMessage": "Hi Happy2Tech, I'd like to claim the Black Week 20% discount.\n\nService I'm interested in: \n\nPlease share the next steps and a quote.",
     "common_blackWeekBadge": "Black Week -20%",
-    "common_blackWeekPrice": "Special offer: {price}",
     "common_blackWeekQuote": "20% off your quote",
-    "common_blackWeekUntil": "until 30 Nov"
+    "common_blackWeekUntil": "until 30 Nov",
+    "blackWeek_excludes": "*Excludes the Starter website package.",
+    "blackWeek_daysShort": "d",
+    "blackWeek_stripOffer": "Flat 20% off all services",
+    "blackWeek_stripCta": "See offers",
+    "common_blackWeekSale": "Black Week price"
   },
   "aiShowcase": {
     "eyebrow": "Powered by AI",

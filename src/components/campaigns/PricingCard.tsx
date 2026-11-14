@@ -71,11 +71,10 @@ const PricingCard = ({
   const priceValue = tier.priceFrom ? Number(tier.priceFrom.replace(/[^\d]/g, "")) : 0;
   const priceToValue = tier.priceTo ? Number(tier.priceTo.replace(/[^\d]/g, "")) : 0;
   const priceOpenEnded = tier.priceFrom?.endsWith("+") ?? false;
-  const blackWeek = useBlackWeekActive();
+  const blackWeekActive = useBlackWeekActive();
+  const onSale = blackWeekActive && !tier.noDiscount;
   const discounted = (value: number) => Math.round(value * (1 - BLACK_WEEK_DISCOUNT));
-  const offerPrice = priceValue
-    ? `€${discounted(priceValue)}${priceToValue ? `–${discounted(priceToValue)}` : ""}${priceOpenEnded ? "+" : ""}`
-    : "";
+  const regularPrice = `€${priceValue}${priceToValue ? `–${priceToValue}` : ""}${priceOpenEnded ? "+" : ""}`;
   const contactMessage = [
     `Hi Happy2Tech, I'm interested in the ${t(`${prefix}_name`)} plan under ${t(`${categoryId}_heading`)}.`,
     "",
@@ -344,32 +343,46 @@ const PricingCard = ({
             </span>
           </div>
         ) : (
-          <>
-            {!priceToValue && !priceOpenEnded && (
-              <span className="text-[11px] font-bold uppercase tracking-wide text-black/45">
-                {t("common_from")}
+          <div className="flex min-w-0 flex-col">
+            {onSale && (
+              <span className="flex items-center gap-2">
+                <s className="text-[15px] font-bold tabular-nums text-black/35 decoration-[#C11212]/70 decoration-2">
+                  {regularPrice}
+                </s>
+                <span className="rounded-md bg-[#C11212] px-1.5 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
+                  -{Math.round(BLACK_WEEK_DISCOUNT * 100)}%
+                </span>
               </span>
             )}
-            <span className="inline-block min-w-[92px] text-[34px] font-extrabold tabular-nums tracking-tight text-[#0D1235]">
-              <CountUp prefix="€" value={priceValue} />
-              {priceToValue > 0 && (
-                <>
-                  –<CountUp value={priceToValue} />
-                </>
+            <span className="flex items-baseline gap-2">
+              {!priceToValue && !priceOpenEnded && (
+                <span className="text-[11px] font-bold uppercase tracking-wide text-black/45">
+                  {t("common_from")}
+                </span>
               )}
-              {priceOpenEnded && "+"}
+              <span
+                className={`inline-block min-w-[92px] text-[34px] font-extrabold tabular-nums tracking-tight ${onSale ? "text-[#C11212]" : "text-[#0D1235]"}`}
+              >
+                <CountUp prefix="€" value={onSale ? discounted(priceValue) : priceValue} />
+                {priceToValue > 0 && (
+                  <>
+                    –<CountUp value={onSale ? discounted(priceToValue) : priceToValue} />
+                  </>
+                )}
+                {priceOpenEnded && "+"}
+              </span>
             </span>
-          </>
+          </div>
         )}
       </div>
 
-      {blackWeek && (
+      {onSale && (
         <div className="mt-3 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-[#C11212]/20 bg-gradient-to-r from-[#050A30] to-[#1A2266] px-3 py-2 text-white">
           <span className="shrink-0 rounded-md bg-[#C11212] px-1.5 py-0.5 text-[10px] font-black uppercase tracking-wide">
             {t("common_blackWeekBadge")}
           </span>
           <span className="min-w-0 text-[12.5px] font-semibold">
-            {offerPrice ? t("common_blackWeekPrice", { price: offerPrice }) : t("common_blackWeekQuote")}
+            {priceValue ? t("common_blackWeekSale") : t("common_blackWeekQuote")}
           </span>
           <span className="ml-auto shrink-0 text-[10.5px] text-white/55">{t("common_blackWeekUntil")}</span>
         </div>

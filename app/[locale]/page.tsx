@@ -1,5 +1,6 @@
 import Footer from "@/src/components/layout/Footer";
 import Navbar from "@/src/components/layout/Navbar";
+import BlackWeekStrip from "@/src/components/campaigns/BlackWeekStrip";
 import About from "@/src/components/sections/About";
 import AiShowcase from "@/src/components/sections/AiShowcase";
 import Approach from "@/src/components/sections/Approach";
@@ -24,6 +25,7 @@ export default function Home() {
         }}
       />
       <Navbar />
+      <BlackWeekStrip />
       <main>
         <section id="home">
           <Hero />

@@ -24,7 +24,7 @@ export const useBlackWeekActive = () => {
   return active;
 };
 
-type TimeLeft ={ days: number; hours: number; minutes: number; seconds: number };
+type TimeLeft = { days: number; hours: number; minutes: number; seconds: number };
 
 const getTimeLeft = (): TimeLeft | null => {
   const diff = BLACK_WEEK_ENDS - Date.now();
@@ -37,12 +37,10 @@ const getTimeLeft = (): TimeLeft | null => {
   };
 };
 
-const pad = (n: number) => String(n).padStart(2, "0");
+export const pad = (n: number) => String(n).padStart(2, "0");
 
-const BlackWeekBanner = () => {
-  const t = useTranslations("campaigns");
-  const locale = useLocale();
-  // undefined = not mounted yet (avoids a server/client clock mismatch), null = offer ended.
+/** Live countdown: undefined until mounted (avoids a server/client clock mismatch), null once the offer ends. */
+export const useBlackWeekCountdown = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null | undefined>(undefined);
 
   useEffect(() => {
@@ -54,6 +52,14 @@ const BlackWeekBanner = () => {
       clearInterval(timer);
     };
   }, []);
+
+  return timeLeft;
+};
+
+const BlackWeekBanner = () => {
+  const t = useTranslations("campaigns");
+  const locale = useLocale();
+  const timeLeft = useBlackWeekCountdown();
 
   if (timeLeft === null) return null;
 
@@ -138,6 +144,7 @@ const BlackWeekBanner = () => {
           <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base lg:mx-0">
             {t("blackWeek_description")}
           </p>
+          <p className="mt-2 text-xs text-white/45">{t("blackWeek_excludes")}</p>
         </div>
 
         {/* Countdown + CTA */}
