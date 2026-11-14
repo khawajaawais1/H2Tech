@@ -226,8 +226,8 @@ export const chatIntents: ChatIntent[] = [
       fi: ["yhtey", "sähköpost", "puhel", "soita", "numero", "osoite", "sijainti", "missä", "toimisto"],
     },
     reply: {
-      en: "You can reach us at info@happy2tech.fi or +358 40 707 8000. We're based in Finland and usually reply within one business day.",
-      fi: "Tavoitat meidät osoitteesta info@happy2tech.fi tai numerosta +358 40 707 8000. Olemme Suomessa ja vastaamme yleensä yhden arkipäivän sisällä.",
+      en: "You can reach us at info@happy2tech.fi or +358 44 433 3433. We're based in Finland and usually reply within one business day.",
+      fi: "Tavoitat meidät osoitteesta info@happy2tech.fi tai numerosta +358 44 433 3433. Olemme Suomessa ja vastaamme yleensä yhden arkipäivän sisällä.",
     },
     link: { href: "/contact", label: { en: "Open contact page", fi: "Avaa yhteystiedot" } },
     next: ["human", "quote"],

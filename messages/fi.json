@@ -495,7 +495,20 @@
     "directCall_heading": "Haluatko puhua suoraan?",
     "directCall_description": "Ohita lomake — viesti meille suoraan WhatsAppissa, ja vastaamme muutamassa minuutissa.",
     "directCall_phoneLabel": "Tai soita meille suoraan",
-    "directCall_cta": "Keskustele WhatsAppissa"
+    "directCall_cta": "Keskustele WhatsAppissa",
+    "blackWeek_eyebrow": "Rajoitettu tarjous",
+    "blackWeek_title": "Black Week",
+    "blackWeek_offerPre": "-20 %",
+    "blackWeek_offerHighlight": "kaikista palveluista",
+    "blackWeek_description": "Verkkosivut, mobiilisovellukset, verkkosovellukset ja tekoälyagentit — kaikki paketit 20 % edullisemmin, kun varaat ennen tarjouksen päättymistä.",
+    "blackWeek_endsIn": "Tarjous päättyy",
+    "blackWeek_days": "Päivää",
+    "blackWeek_hours": "Tuntia",
+    "blackWeek_minutes": "Min",
+    "blackWeek_seconds": "Sek",
+    "blackWeek_cta": "Lunasta -20 % etu",
+    "blackWeek_validUntil": "Tarjous voimassa 30.11.2026 asti",
+    "blackWeek_contactMessage": "Hei Happy2Tech, haluaisin hyödyntää Black Week -tarjouksen (-20 %).\n\nPalvelu, josta olen kiinnostunut: \n\nKertokaa seuraavat askeleet ja tarjous."
   },
   "aiShowcase": {
     "eyebrow": "Tekoälyn voimalla",

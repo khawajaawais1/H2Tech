@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const PHONE_DISPLAY = "+358 40 707 8000";
+const PHONE_DISPLAY = "+358 44 433 3433";
 const WHATSAPP_HREF =
-  "https://wa.me/358407078000?text=" +
+  "https://wa.me/358444333433?text=" +
   encodeURIComponent("Hi! I have a quick question about your promotion packages.");
 
 const WhatsAppIcon = () => (
@@ -49,7 +49,7 @@ const DirectCallBanner = () => {
               </p>
               <p className="mt-2 text-[13px] font-semibold text-white/80">
                 {t("directCall_phoneLabel")}{" "}
-                <a href="tel:+358407078000" className="text-[#FF6063] underline-offset-2 hover:underline">
+                <a href="tel:+358444333433" className="text-[#FF6063] underline-offset-2 hover:underline">
                   {PHONE_DISPLAY}
                 </a>
               </p>

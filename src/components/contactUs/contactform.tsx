@@ -273,7 +273,7 @@ const ContactSection = ({ initialMessage = "", initialTopic = "" }: ContactSecti
                     <path d="M6 4h3l2 5-2 1.5c1.2 2.3 2.8 3.9 5.1 5.1L15.7 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 5.3A1.3 1.3 0 0 1 5.3 4H6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <a href="tel:+358407078000" className="underline">+358 407078000</a>
+                <a href="tel:+358444333433" className="underline">+358 44 433 3433</a>
               </div>
               <div className="flex items-start gap-3">
                 <span className="mt-[2px]">
