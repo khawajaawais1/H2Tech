@@ -508,7 +508,11 @@
     "blackWeek_seconds": "Secs",
     "blackWeek_cta": "Claim my 20% off",
     "blackWeek_validUntil": "Offer valid until 30 November 2026",
-    "blackWeek_contactMessage": "Hi Happy2Tech, I'd like to claim the Black Week 20% discount.\n\nService I'm interested in: \n\nPlease share the next steps and a quote."
+    "blackWeek_contactMessage": "Hi Happy2Tech, I'd like to claim the Black Week 20% discount.\n\nService I'm interested in: \n\nPlease share the next steps and a quote.",
+    "common_blackWeekBadge": "Black Week -20%",
+    "common_blackWeekPrice": "Special offer: {price}",
+    "common_blackWeekQuote": "20% off your quote",
+    "common_blackWeekUntil": "until 30 Nov"
   },
   "aiShowcase": {
     "eyebrow": "Powered by AI",

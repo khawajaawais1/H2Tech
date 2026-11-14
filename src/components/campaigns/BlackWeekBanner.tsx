@@ -7,7 +7,24 @@ import { useLocale, useTranslations } from "next-intl";
 /** Offer ends at the end of 30 November, Finnish time (EET, UTC+2). */
 export const BLACK_WEEK_ENDS = new Date("2026-11-30T23:59:59+02:00").getTime();
 
-type TimeLeft = { days: number; hours: number; minutes: number; seconds: number };
+export const BLACK_WEEK_DISCOUNT = 0.2;
+
+/** True on the client while the offer runs; false during SSR and after it ends. */
+export const useBlackWeekActive = () => {
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    const check = () => setActive(Date.now() < BLACK_WEEK_ENDS);
+    const first = setTimeout(check, 0);
+    const timer = setInterval(check, 60_000);
+    return () => {
+      clearTimeout(first);
+      clearInterval(timer);
+    };
+  }, []);
+  return active;
+};
+
+type TimeLeft ={ days: number; hours: number; minutes: number; seconds: number };
 
 const getTimeLeft = (): TimeLeft | null => {
   const diff = BLACK_WEEK_ENDS - Date.now();

@@ -508,7 +508,11 @@
     "blackWeek_seconds": "Sek",
     "blackWeek_cta": "Lunasta -20 % etu",
     "blackWeek_validUntil": "Tarjous voimassa 30.11.2026 asti",
-    "blackWeek_contactMessage": "Hei Happy2Tech, haluaisin hyödyntää Black Week -tarjouksen (-20 %).\n\nPalvelu, josta olen kiinnostunut: \n\nKertokaa seuraavat askeleet ja tarjous."
+    "blackWeek_contactMessage": "Hei Happy2Tech, haluaisin hyödyntää Black Week -tarjouksen (-20 %).\n\nPalvelu, josta olen kiinnostunut: \n\nKertokaa seuraavat askeleet ja tarjous.",
+    "common_blackWeekBadge": "Black Week -20 %",
+    "common_blackWeekPrice": "Erikoistarjous: {price}",
+    "common_blackWeekQuote": "-20 % tarjouksesta",
+    "common_blackWeekUntil": "30.11. asti"
   },
   "aiShowcase": {
     "eyebrow": "Tekoälyn voimalla",
