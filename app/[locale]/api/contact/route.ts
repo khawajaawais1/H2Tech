@@ -84,10 +84,12 @@ export async function POST(req: Request) {
     console.log("SMTP_USER:", process.env.SMTP_USER);
     console.log("SMTP_PASS:", process.env.SMTP_PASS ? "SET" : "NOT SET");
 
+    // Free Zoho plans must use smtp.zoho.eu; smtppro.* is for paid plans and returns "554 Access Restricted".
+    const port = Number(process.env.SMTP_PORT) || 465;
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtppro.zoho.com",
-      port: 587,
-      secure: false,
+      host: process.env.SMTP_HOST || "smtp.zoho.eu",
+      port,
+      secure: port === 465,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
