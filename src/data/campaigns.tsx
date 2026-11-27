@@ -7,6 +7,8 @@ export type PricingTier = {
   featured?: boolean;
   priceFrom?: string;
   priceTo?: string;
+  /** Excluded from time-limited sales such as Black Week. */
+  noDiscount?: boolean;
   quote?: { variant: QuoteVariant };
 };
 
@@ -33,7 +35,7 @@ export const categories: ServiceCategory[] = [
       </svg>
     ),
     tiers: [
-      { id: "tier1", priceFrom: "€99", priceTo: "€199" },
+      { id: "tier1", priceFrom: "€99", priceTo: "€199", noDiscount: true },
       { id: "tier2", featured: true, priceFrom: "€399" },
       { id: "tier3", priceFrom: "€699" },
       { id: "tier4", priceFrom: "€3000+" },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
 const WHATSAPP_HREF =
-  "https://wa.me/358407078000?text=" +
+  "https://wa.me/358444333433?text=" +
   encodeURIComponent("Hi! I'd like to book a free call to discuss a promotion package.");
 
 const CampaignFinalCta = () => {

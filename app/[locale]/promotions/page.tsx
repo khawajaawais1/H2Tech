@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/src/components/layout/Footer";
 import Navbar from "@/src/components/layout/Navbar";
 import CampaignHero from "@/src/components/campaigns/Hero";
+import BlackWeekBanner from "@/src/components/campaigns/BlackWeekBanner";
 import PricingExplorer from "@/src/components/campaigns/PricingExplorer";
 import DirectCallBanner from "@/src/components/campaigns/DirectCallBanner";
 import TrustStrip from "@/src/components/campaigns/TrustStrip";
@@ -37,6 +38,7 @@ export default function PromotionsPage() {
       />
       <Navbar />
       <main>
+        <BlackWeekBanner />
         <CampaignHero />
         <PricingExplorer />
         <DirectCallBanner />
